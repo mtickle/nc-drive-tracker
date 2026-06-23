@@ -51,7 +51,8 @@ export default function Auth() {
         provider,
         options: {
           // Redirect back to your app after successful OAuth handshake
-          redirectTo: window.location.origin + '/nc-drive-tracker',
+          // redirectTo: window.location.origin + '/nc-drive-tracker',
+          redirectTo: `${window.location.origin}${import.meta.env.BASE_URL}`,
           // Pass the role option for new users who sign up via OAuth
           queryParams: isSignUp ? { role } : undefined
         }
@@ -160,7 +161,7 @@ export default function Auth() {
             >
               Google
             </button>
-            <button
+            {/* <button
               onClick={() => handleSocialLogin('facebook')}
               className="flex justify-center rounded-lg border border-slate-200 p-2 hover:bg-slate-50 transition cursor-pointer text-sm font-medium text-slate-600"
               title="Sign in with Facebook"
@@ -173,7 +174,7 @@ export default function Auth() {
               title="Sign in with Apple"
             >
               Apple
-            </button>
+            </button> */}
           </div>
         </div>
 
