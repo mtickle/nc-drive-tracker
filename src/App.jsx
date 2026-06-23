@@ -4,6 +4,8 @@ import { supabase } from './lib/supabase'
 import Auth from './pages/Auth'
 import Dashboard from './pages/Dashboard'
 import ActiveDrive from './pages/ActiveDrive'
+import PrintableLog from './pages/PrintableLog'
+
 
 function App() {
   const [session, setSession] = useState(null)
@@ -51,6 +53,10 @@ function App() {
           <Route 
   path="/active-drive" 
   element={session ? <ActiveDrive /> : <Navigate to="/login" replace />} 
+/>
+<Route 
+  path="/print-log" 
+  element={session ? <PrintableLog session={session} /> : <Navigate to="/login" replace />} 
 />
           <Route 
             path="/dashboard" 

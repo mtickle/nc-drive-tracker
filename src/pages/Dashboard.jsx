@@ -172,10 +172,20 @@ export default function Dashboard({ session }) {
           </button>
         </div>
       </main>
-
-      {/* Chronological Drive Feed */}
+{/* Chronological Drive Feed */}
       <section className="rounded-xl bg-white p-6 shadow-sm">
-        <h2 className="mb-4 text-lg font-semibold text-slate-800">Recent Drives</h2>
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-lg font-semibold text-slate-800">Recent Drives</h2>
+          <button 
+            onClick={() => navigate('/print-log')}
+            className="cursor-pointer rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 flex items-center gap-2"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Export DMV Log
+          </button>
+        </div>
         
         {allDrives.length === 0 ? (
           <p className="text-sm text-slate-500 text-center py-8">No drives logged yet. Time to hit the road!</p>
